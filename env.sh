@@ -1,5 +1,7 @@
 #!/bin/sh
 
+HOSTNAME=k8s-master
+
 K8S_SERVICE_IP=10.0.0.1
 MASTER_IP=192.168.171.200
 KUBERNETES_PUBLIC_ADDRESS=$MASTER_IP
@@ -30,5 +32,4 @@ ETCD_PEER_DAYS=5475
 
 SECRET_ENC_KEY=$(echo -n 'your_32_bytes_secure_private_key' | base64)
 PAUSE_IMAGE=k8s.gcr.io/pause-amd64:3.1
-NODE_USER_NAME=k8s-master
 

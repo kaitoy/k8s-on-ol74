@@ -30,11 +30,11 @@ DNS.1 = kubernetes
 DNS.2 = kubernetes.default
 DNS.3 = kubernetes.default.svc
 DNS.4 = kubernetes.default.svc.cluster.local
-DNS.5 = k8s-controller
+DNS.5 = ${HOSTNAME}
 IP.1 = ${MASTER_IP}
 IP.2 = ${K8S_SERVICE_IP}
 [ alt_names_etcd ]
-DNS.1 = k8s-controller
+DNS.1 = ${HOSTNAME}
 IP.1 = ${MASTER_IP}
 EOF
 
