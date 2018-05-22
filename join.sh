@@ -22,10 +22,10 @@ cat <<EOF | kubectl create -f -
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: ${NODE_USER_NAME}-node-client-cert-renewal
+  name: ${HOSTNAME}-node-client-cert-renewal
 subjects:
 - kind: User
-  name: system:node:${NODE_USER_NAME}
+  name: system:node:${HOSTNAME}
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole
@@ -46,10 +46,10 @@ cat <<EOF | kubectl create -f -
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: ${NODE_USER_NAME}-server-client-cert-renewal
+  name: ${HOSTNAME}-server-client-cert-renewal
 subjects:
 - kind: User
-  name: system:node:${NODE_USER_NAME}
+  name: system:node:${HOSTNAME}
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole
