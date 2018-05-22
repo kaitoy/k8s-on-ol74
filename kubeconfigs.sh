@@ -37,7 +37,7 @@ KUSER="kubelet-bootstrap"
 kubectl config set-cluster ${CLUSTER_NAME} --certificate-authority=/etc/kubernetes/pki/ca.crt --embed-certs=true --server=https://${KUBERNETES_PUBLIC_ADDRESS}:6443 --kubeconfig=${KCONFIG}
 kubectl config set-context ${KUSER}@${CLUSTER_NAME} --cluster=${CLUSTER_NAME} --user=${KUSER} --kubeconfig=${KCONFIG}
 kubectl config use-context ${KUSER}@${CLUSTER_NAME} --kubeconfig=${KCONFIG}
-chown kubernetes:kubernetes ${KCONFIG}
+chown root:root ${KCONFIG}
 chmod 0600 ${KCONFIG}
 
 KCONFIG="/etc/kubernetes/kube-proxy.kubeconfig"
@@ -46,5 +46,5 @@ kubectl config set-cluster ${CLUSTER_NAME} --certificate-authority=/etc/kubernet
 kubectl config set-credentials ${KUSER} --client-certificate=/etc/kubernetes/pki/kube-proxy.crt --client-key=/etc/kubernetes/pki/kube-proxy.key --embed-certs=true --kubeconfig=${KCONFIG}
 kubectl config set-context ${KUSER}@${CLUSTER_NAME} --cluster=${CLUSTER_NAME} --user=${KUSER} --kubeconfig=${KCONFIG}
 kubectl config use-context ${KUSER}@${CLUSTER_NAME} --kubeconfig=${KCONFIG}
-chown kubernetes:kubernetes ${KCONFIG}
+chown root:root ${KCONFIG}
 chmod 0600 ${KCONFIG}
